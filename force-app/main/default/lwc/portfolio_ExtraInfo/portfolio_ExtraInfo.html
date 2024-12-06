@@ -1,0 +1,19 @@
+<template>
+    <div class="Container">
+            <ul>
+                <li><a onclick={handleEducation}>Education</a></li>
+                <li><a onclick={handleWork}>Work Experience</a></li>
+                <li><a onclick={handleEducation}>Skills</a></li>
+                <li><a onclick={handleEducation}>Interest</a></li>
+                <li><a onclick={handleEducation}>Certification</a></li>
+            </ul>
+        <div class="Menu_Holder">
+            <template if:true={education}>
+                <c-portfolio_-education></c-portfolio_-education>
+            </template>
+            <template if:true={work}>
+                <c-portfolio_-work></c-portfolio_-work>
+            </template>
+        </div>
+    </div>
+</template>

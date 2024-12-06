@@ -1,0 +1,15 @@
+.Container{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fffefe;
+    color: #404040;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+.Header{
+    font-size: 30px;
+    font-weight: bolder;
+}

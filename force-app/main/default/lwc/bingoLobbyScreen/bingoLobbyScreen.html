@@ -1,0 +1,16 @@
+<template>
+    <div class="container">
+        <p>Lobby Name : {LobbyName}</p>
+        <p>Players : {totalplayer}/{maxplayer}</p>
+        <div class="playerList">
+            <template for:each={players} for:item="item">
+                <div key={item.Id} class="player">
+                    <span>{item.Username__c}</span>
+                    <template lwc:if={ishost}><button name={item.id} title="kick" class="kick">kick</button></template>
+            </div>
+            </template>
+        </div>
+        <Button name="leave" title="Leave" onclick={handleLeave}>Leave</Button>
+        <template lwc:if={ishost}><Button name="start" title="Start" >Start</Button></template>
+    </div>
+</template>

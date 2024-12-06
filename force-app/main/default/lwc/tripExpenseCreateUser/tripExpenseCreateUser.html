@@ -1,0 +1,13 @@
+<template>
+    <div class="Container">
+        <div class="Block">
+            <input type="text" class="Input_text" placeholder="FirstName" onchange={handleChange} data-id="0"/>
+            <input type="text" class="Input_text" placeholder="LastName" onchange={handleChange} data-id="1"/>
+            <input type="email" class="Input_text" placeholder="Email" onchange={handleChange} data-id="2"/>
+            <input type="text" class="Input_text" placeholder="UserName" onchange={handleChange} data-id="3"/>
+            <input type="password" class="Input_text" placeholder="Password" onchange={handleChange} data-id="4"/>
+            <input type="password" class="Input_text" placeholder="Retype Password" onchange={handleChange} data-id="5"/>
+            <button class="Login_Btn" onclick={handleCreate}>Create</button>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Create Contact">
+        <template if:true={loading}>
+            <div class="spinner1">
+                <lightning-spinner class="spinner-main" variant="brand" alternative-text="Loading" size="medium"></lightning-spinner>
+            </div>
+        </template>
+        <template if:true={home}>
+            <div class="slds-m-around_large">
+                <lightning-input type="file" accept=".csv" label="Please upload UTF-8, comma separated csv file" onchange={handleFile}>
+                </lightning-input>
+                <div class="fileName">
+                    <h2>{filename}</h2>
+                </div>
+            </div>
+        </template>
+        <template if:true={userinfoscreen}>
+            <div class="slds-m-around_large">
+                <h2>Total Count : {totalrecords}</h2>
+                <h2>Valid Count : {validrecords}</h2>
+                <h2>Invalid Count : {invalidrecords}</h2>
+                <template if:true={invaliddatapresent}>
+                    <h1>Invalid Records</h1>
+                    <lightning-datatable key-field="id" data={invaliddata} columns={columns} hide-checkbox-column></lightning-datatable>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>

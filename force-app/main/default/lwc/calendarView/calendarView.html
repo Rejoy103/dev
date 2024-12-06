@@ -1,0 +1,27 @@
+<template>
+    <lightning-card class="Main_Window">
+        <div class="Window">
+            <table  border="1">
+                <thead>
+                    <tr>
+                        <template for:each={days} for:item="day">
+                            <th key={day}>{day}</th>
+                        </template>
+                    </tr>
+                </thead>
+                
+                <template for:each={timeofday} for:item="time">
+                    <tr key={time} class="time_row">
+                        <td class="time_cell">{time}</td>
+                        <td>_</td>
+                        <td>_</td>
+                        <td>_</td>
+                        <td>_</td>
+                        <td>_</td>
+                        <td>_</td>
+                    </tr>
+                </template>
+            </table>
+        </div>
+    </lightning-card>
+</template>

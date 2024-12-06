@@ -1,0 +1,59 @@
+<apex:page renderAs="pdf" applyBodyTag="false" controller="BillData">
+    <head>
+        <style type="text/css" media="print">
+             @page{
+               	@top-center{
+               		content: element(header);
+               }
+                @bottom-left{
+               	content: element(footer);	
+               }
+            }
+            .tablestyle{
+               	border-width:0px 0px 1px 0px;
+               	border-color:#000;
+                border-style:solid;
+               }
+            .header{
+            	font-size:40px;
+               	font-weigth: bold;
+                border-width:0px 0px 2px 0px;
+                border-style:solid;
+            	margin-bottom:20px;
+                position: running(header);
+            }
+            .footer{
+           	    border-width:2px 0px 0px 0px;
+                border-style:solid;
+                position :running(footer);
+            }
+            table{
+               width:100%;
+               }
+            .center{
+            	text-align:center;
+            }
+        </style>
+    </head>
+    <div class="header center">
+        Bill
+    </div>
+    <div style="margin:50px0px0px0px">
+        <apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<strong >Bill Reference : {!pur.Name}</strong>
+                <p>Total Items : {!pur.Total_Items__c}</p>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock >
+                    <apex:pageBlockTable value="{!Items}" var="Item" headerClass="tablestyle">
+        			<apex:column value="{!Item.Item_No__c}" headerValue="Item No"/>
+                    <apex:column value="{!Item.Name__c}" headerValue="Name"/>
+                    <apex:column value="{!Item.Unit_Price__c}" headerValue="Unit Price"/>
+            		<apex:column value="{!Item.Quantity__c}" headerValue="Quantity"/>
+            		<apex:column value="{!Item.Total_Price__c}" headerValue="Total Price"/>
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+
+    </div>
+</apex:page>

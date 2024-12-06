@@ -1,0 +1,47 @@
+<template>
+    <div class="container">
+        <lightning-card title="Memory Game">
+            <div class="slds-var-p-around_medium">
+                <section class="score-panel">
+                    <span class="moves">{moves}</span> Moves(s)
+                    <div class="time">{time}</div>
+                    <div class="restart" >
+                        <li class="fa fa-repeat" aria-hidden="true" onclick={reset}></li>
+                    </div>
+                </section>
+                <section class="game-panel"> 
+                    <ul class="deck card-deck grid-container">
+                        <template for:each={cards} for:item="card">
+                            <li class={card.listClass} type={card.type} key={card.id} onclick={displayCard}>
+                                <i class={card.icon}></i>
+                            </li>
+                        </template>
+                    </ul>
+                    <template if:true={isWon}>
+                        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+                            <div class="slds-modal__container">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+                            <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                            </svg>
+                            <span class="slds-assistive-text">Cancel and close</span>
+                            </button>
+                            <div class="slds-modal__header">
+                            <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Win!</h1>
+                            </div>
+                            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                <p>You made <strong>{moves}</strong> moves in {time}.</p>
+                                <p>Your game rating is {rate}</p>
+                            </div>
+                            <div class="slds-modal__footer">
+                            <button class="slds-button slds-button_brand" onclick={reset}>Play Again</button>
+                            </div>
+                            </div>
+                            </section>
+                            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+                    </template>
+                </section>
+            </div>
+        </lightning-card>
+    </div>
+</template>

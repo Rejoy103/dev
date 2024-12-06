@@ -1,0 +1,33 @@
+.Container{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fffefe;
+    color: #404040;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+.Heading{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.Section{
+    margin-left: 7vw;
+    margin-top: 5vh;
+}
+
+.SubSection{
+    margin-left: 3vw;
+}
+
+.SubSection p{
+    margin: 2px 0px;
+}
+
+.st0{
+    fill-rule:evenodd;
+    clip-rule:evenodd;
+}

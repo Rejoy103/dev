@@ -1,0 +1,92 @@
+<apex:page renderAs="pdf" applyBodyTag="false" controller="Estimate_Controller">
+    <head>
+           <style type="text/css" media="print">
+			   @page{
+               	@top-center{
+               		content: element(header);
+               }
+                @bottom-left{
+               	content: element(footer);	
+               }
+               }
+
+               table{
+               width:100%;
+               }
+               .caps{
+                    font-weigth: bold;
+                    font-size: 30px;
+               		margin-bottom: 20px;
+                }
+               .maincontent{
+
+               	padding-left:50px;
+               }
+               .section{
+  				padding:5px;
+                font-size:20px;
+               	font-weigth: bold;
+               	width:100%;
+               	padding-bottom:10px;
+               	background-color: #eee;
+               }
+               .tablestyle{
+               	border-width:0px 0px 1px 0px;
+               	border-color:#000;
+                border-style:solid;
+               }
+               .centered{
+               	text-align:center;
+               }
+               .right{
+               	text-align:right;
+               }
+               .header{
+               	 font-size:40px;
+               	font-weigth: bold;
+                border-width:0px 0px 2px 0px;
+                border-style:solid;
+                position: running(header);
+               }
+               .footer{
+                border-width:2px 0px 0px 0px;
+                border-style:solid;
+                position :running(footer);
+               }
+               .totalest{
+               		margin-top:15px;
+               }
+               .acctotest{
+               font-weight:bold;
+               }
+    		</style>
+    </head>
+    <div class="header centered">Test Company</div>
+    <h1>Invoice</h1>
+    <p><span class="caps">Dear {!acc.Name},</span><br/>
+     <span class="maincontent">Below Tables Shows the estimation details.</span></p>
+    <apex:pageBlock >
+    	    <div class="section">Estimation</div>
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockTable value="{!estimations}" var="e" headerclass="tablestyle">
+                	<apex:column value="{!e.Status__c}" headerclass="centered" styleclass="centered"/>
+                    <apex:column value="{!e.Charge_1__c}" headerclass="right" styleclass="right"/>
+                    <apex:column value="{!e.Charge_2__c}" headerclass="right" styleclass="right"/>
+                    <apex:column value="{!e.Total_Estimation__c}" headerClass="right" styleClass="right" />
+                </apex:pageBlockTable>
+                <div class="totalest right"><span class="acctotest">Account Total Estimation : ${!acc.Total_Estimation__c}</span></div>
+            </apex:pageBlockSection>
+    </apex:pageBlock>
+	    <apex:pageBlock >
+            <p>Below given are the contacts for this accounts</p>
+    	    <div class="section">Contacts</div>
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockTable value="{!contacts}" var="c" headerclass="tablestyle">
+                	<apex:column value="{!c.FirstName} {!c.LastName}" headerValue="Name"/>
+                    <apex:column value="{!c.Phone}"/>
+                    <apex:column value="{!c.Email}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+    </apex:pageBlock>
+<div class="footer">Invoice is Generated at {!NOW()}</div>
+</apex:page>

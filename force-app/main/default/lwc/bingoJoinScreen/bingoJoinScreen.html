@@ -1,0 +1,20 @@
+<template>
+    <div class="container">
+        <input type="text" onchange={handleTextChange} name="username" placeholder="Username" class="int-text" required/>
+        <p>Lobby List : </p>
+        <div class="lobby_container">
+            <template for:each={lobby} for:item="item">
+                <div class="lobby" key={item.id}>
+                    <span>{item.Name__c}({item.Total_Player__c}/{item.Max_Player__c})</span>
+                    <button name={item.Id} title="Join" class="join" onclick={handleJoin}>Join</button>
+                </div>
+            </template>
+        </div>
+        <Button name="back" title="Back" onclick={handleBack}>Back</Button>
+    </div>
+    <template lwc:if={loading}>
+        <div class="loader">
+            <div class="loader_Icon"></div>
+        </div>
+    </template>
+</template>

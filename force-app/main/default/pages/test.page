@@ -1,0 +1,9 @@
+<apex:page controller="testcontroller">
+    <apex:form >
+            <apex:selectList value="{!accid}" size="1" multiselect="false" >
+        <apex:selectOptions value="{!Options}" />
+                <apex:actionSupport event="onchange" action="{!change}" reRender="text"/>
+    </apex:selectList>
+    </apex:form>
+	<apex:outputText id="text" value="{!name}"></apex:outputText>
+</apex:page>

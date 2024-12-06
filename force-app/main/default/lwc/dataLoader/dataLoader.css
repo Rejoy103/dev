@@ -1,0 +1,36 @@
+body{
+    margin:10px;
+    padding:10px;
+}
+
+.contianer{
+    padding:50px;
+}
+.main_container{
+    margin:10px;
+}
+
+.btn{
+    margin-top: 20px;
+    float:right;
+}
+
+.spinner1{
+    display: flex;
+    width: 80px;
+    height: 120px;
+}
+
+.spinner-main{
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 25px;
+    margin-top:10px;
+}
+
+h2{
+    font-size: 16px;
+}

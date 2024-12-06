@@ -1,0 +1,70 @@
+.container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:16px;
+}
+
+.custom_card{
+    max-width: 520px;
+    background: #0b2451;
+    border-radius: 25px;
+    min-width: 370px;
+    padding:16px;
+}
+
+
+img{
+    margin: auto;
+    display: block;
+}
+
+.drpbtn{
+    min-width: 50px;
+    max-width: 50px;
+}
+
+.main-app{
+    background-image: url('/sfsites/c/resource/currencyConvertor/currencyConverterAssets/currencyAppBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.input_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.input_container input{
+    min-width: 100px;
+    max-width: 300px;
+    width: 300px;
+    margin: 10px auto;
+    border-radius: 10px;
+    border-style: none;
+    caret-color: transparent;
+    height: 30px;
+    padding: 10px;
+    color: black;
+}
+
+.custom-icon{
+    --slds-c-icon-color-background:#f9ba49;
+    --slds-c-icon-color-foreground:#0c2451;
+    --slds-c-icon-color-foreground-default:#f9ba49;
+    transform: rotate(45deg);
+}
+
+.input_container input:focus{
+    outline: none;
+}
+
+.option_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:40px;
+}

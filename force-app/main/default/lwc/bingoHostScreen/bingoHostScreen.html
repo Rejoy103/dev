@@ -1,0 +1,19 @@
+<template>
+    <div class="main_container">
+        <form class="form_container">
+            <input type="text" onchange={handleTextChange} name="username" placeholder="Username" class="int-text" required/>
+            <input type="text" onchange={handleTextChange} name="lobbyname" placeholder="Lobby Name" class="int-text" required/>
+            <input type="number" onchange={handleTextChange} name="maxplayer" min="2" max="16" placeholder="Max Player" class="int-text" value="2"/>
+            <div style="display:inline">
+                <button name="create" title="create" class="btn_submit" onclick={handleSubmit}>Create</button>
+                <button name="back" title="back" onclick={handleBack} class="btn_submit">Back</button>
+            </div>
+            
+        </form>
+    </div>
+    <template if:true={loading}>
+        <div class="loader">
+            <div class="loader_Icon"></div>
+        </div>
+    </template>
+</template>

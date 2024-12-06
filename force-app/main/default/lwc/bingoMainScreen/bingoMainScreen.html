@@ -1,0 +1,19 @@
+<template>
+    <div class="container">
+        <template lwc:if={mainScreen}>
+            <div class="main_container">
+                <Button name="host" title="Host" onclick={handleHost}>Host</Button>
+                <Button name="join" title="Join" onclick={handleHost}>Join</Button>
+            </div>
+        </template>
+        <template lwc:if={HostScreen}>
+            <c-bingo-host-screen onlobbycreated={handleChildEvent} onback={handleBack}></c-bingo-host-screen>
+        </template>
+        <template lwc:if={LobbyScreen}>
+            <c-bingo-lobby-screen onlobbycreated={handleChildEvent} lobbyid={lobbyid} username={username} playerid={playerid} ishost={isHost}></c-bingo-lobby-screen>
+        </template>
+        <template lwc:if={JoinScreen}>
+            <c-bingo-join-screen onlobbycreated={handleChildEvent} onback={handleBack}></c-bingo-join-screen>
+        </template>
+    </div>
+</template>

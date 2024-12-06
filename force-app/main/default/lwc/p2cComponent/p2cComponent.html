@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Parent to Child Action">
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="number" label="Percentage" onchange={changeHandler} value={percentage}></lightning-input>
+            <c-p2c-progress-component percent={percentage}></c-p2c-progress-component>
+            <lightning-button variant="success" label="reset" onclick={clickHandle}></lightning-button>
+        </div>
+    </lightning-card>
+    <c-p2c-slide-component></c-p2c-slide-component>
+</template>

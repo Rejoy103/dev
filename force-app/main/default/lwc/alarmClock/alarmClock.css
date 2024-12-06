@@ -1,0 +1,70 @@
+.container{
+    margin: 24px auto;
+    padding: 24px;
+    background-color: #243356;
+    max-width: 420px;
+    width: 100%;
+    color: #ffffff;
+    border-radius: 16px;
+}
+
+.title{
+    color: #ffcd0a;
+    font-size: 36px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.curtime{
+    font-size:48px;
+    text-align: center;
+    font-weight: 500;
+    color:#00d9fe;
+    margin:30px auto;
+}
+
+.btn{
+    background-color: #ffcd0a;
+    font-size: 20px;
+    padding: 14px;
+    border-color: #ffcd0a;
+    color:#243356;
+    margin-top: 12px;
+}
+
+img{
+    display: block;
+    margin: 20px auto;
+}
+
+label{
+    color:#44e3ff
+}
+
+button:disabled{
+    background-color: gainsboro;
+    color:#1a1e25;
+    border-color:gainsboro ;
+}
+
+.shake {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }

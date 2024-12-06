@@ -1,0 +1,6 @@
+<apex:page controller="testcontroller">
+    <apex:pageBlock rendered="{!isOk}">
+    	<p1>Hurray</p1>
+        <apex:outputLink value="/{!acccid}">Please Click here {!acccid}</apex:outputLink>
+    </apex:pageBlock>
+</apex:page>

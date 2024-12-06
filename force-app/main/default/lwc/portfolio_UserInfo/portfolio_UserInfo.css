@@ -1,0 +1,55 @@
+.Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #404040;
+    color: #fffefe;
+    height: 100%;
+}
+
+.Profile_Pic{
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+    margin: 20px 10px 10px 10px;
+}
+
+.User_Info{
+    margin-top: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255);
+    color: black;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.Image_Container{
+    margin: 20px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    font-family: monospace;
+}
+
+.Name{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.Heading{
+    font-size: 30px;
+}
+
+.Info{
+    margin-left: 15px;
+    margin-top: 5px;
+    
+}

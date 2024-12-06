@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="LifeCycle Hook">
+        <div class="slds-var-m-around_medium">Parent Component</div>
+        <input type="text" onkeyup={changehandler}/>{name}
+        <lightning-button variant="brand" title="toggle Child" onclick={buttonhandler} class="slds-m-left_x-small"></lightning-button>
+        <template if:true={isVisble}>
+            <c-child-life-cycle-hook></c-child-life-cycle-hook>
+        </template>
+    </lightning-card>
+</template>

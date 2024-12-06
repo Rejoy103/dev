@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="Expense_Controller">
+	<aura:attribute name="ExpenseObject" type="Object" /> 
+       <force:recordData aura:id="record"	
+        fields="Name"
+        targetFields="{!v.ExpenseObject}"
+        recordId="{!v.recordId}"
+        recordUpdated="{!c.doInit}"/>
+        <div style="text-align:center;">
+        <lightning:navigation aura:id="navLink"/>
+            <lightning:button variant="brand" label="View Expense" onclick="{!c.callvfpage }"/>
+            <lightning:button variant="brand" label="Save Expense"  onclick="{!c.savePDF}"/>
+    </div>
+</aura:component>

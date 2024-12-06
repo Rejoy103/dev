@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Expense List">
+        <div class="slds-var-p-around_medium">
+            <lightning-datatable key-field="Id" data={expense} columns={col} draft-values={draft} onsave={handleSave} onclick={handleSelect} >
+            </lightning-datatable>
+            <template if:true={canDelete}>
+                <lightning-button label="delete" class="slds-m-around_medium" onclick={handleDelete} variant="brand"></lightning-button>
+            </template>  
+        </div>
+    </lightning-card>
+</template>

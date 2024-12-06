@@ -1,0 +1,41 @@
+.Container{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fffefe;
+    color: #404040;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+.Header{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.Sub_Container{
+    margin-left: 3vw;
+}
+
+.Sub_Container p{
+    margin: 2px 0px;
+}
+
+.Content_Holder{
+    width: 60%;
+    height: 24%;
+    padding: 10px;
+    border: solid 1px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.Counter{
+    border-radius: 50%;
+    border: solid;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-weight: 900;
+}

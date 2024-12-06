@@ -1,0 +1,26 @@
+<template>
+    <button class="dropdown-btn" onfocusout={hideDropDown} onclick={handleButtonClick}>
+        <p>{value}</p>
+        <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right">
+            <svg class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+              <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+            </svg>
+          </span>
+    </button>
+    
+    <div class="dropdown-menu hidden" tabindex="-1">
+        <template if:true={menuExsist}>
+            <template for:each={options} for:item="option">
+                <div class="menu-item" key={option.value} data-label={option.label} data-value={option.value} onclick={handleMenuItemClick}>
+                    <p class="value">{option.label}</p>
+                </div>
+            </template>
+        </template>
+        <template if:false={menuExsist}>
+            <div class="menu-item" onclick={hideDropDown}>
+                <p class="value">No Options Available</p>
+            </div>
+        </template>
+        
+    </div>
+</template>

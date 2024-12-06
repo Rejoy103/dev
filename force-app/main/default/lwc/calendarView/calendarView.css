@@ -1,0 +1,33 @@
+.Main_Window{
+    width:inherit;
+    height: inherit;
+}
+
+table{
+    table-layout: fixed;
+    width: 100%;
+    margin: 2px;
+}
+
+thead tr{
+    width: 100px;
+    height: 10px;
+}
+thead{
+    height: 10px;
+}
+
+tr th{
+    text-align: center;
+}
+
+.time_row{
+    width: 100px;
+    height: 100px;
+}
+
+.time_cell{
+    font-size: 10px;
+    text-align: left;
+    align-items: end;
+}

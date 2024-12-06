@@ -1,0 +1,49 @@
+<template>
+    <div class="container">
+        <h1 class="title">Alarm Clock</h1>
+        <img src={clockimage} alt="Alarm Clock" height="200px" width="200px"/>
+        <h2 class="curtime">{currentTime}</h2>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <span>                    
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-id-47">Hour(s)</label>
+                        <div class="slds-form-element__control">
+                        <input type="number" name="hour" onchange={inputHandler} id="text-input-id-46"  class="slds-input" min="1" max="12"/>
+                        </div>
+                    </div>
+                </span>
+            </div>
+            <div class="slds-col">
+                <span>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-id-47">Minute(s)</label>
+                        <div class="slds-form-element__control">
+                        <input type="number" id="text-input-id-47" name="minute" onchange={inputHandler} class="slds-input" min="0" max="59"/>
+                        </div>
+                    </div>
+                </span>
+            </div>
+            <div class="slds-col">
+                <span>
+                    <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="select-01">AM/PM</label>
+                    <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                    <select class="slds-select" id="select-01" name="ampm" onchange={inputHandler}>
+                    <option value="am">AM</option>
+                    <option value="pm">PM</option>
+                    </select>
+                    </div>
+                    </div>
+                    </div></span>
+            </div>
+        </div>
+        <template if:false={alarmSet}>
+            <button class="slds-button slds-button_neutral slds-button_stretch btn" disabled={isSelected} onclick={btnHandler}>Set Alarm</button>
+        </template>
+        <template if:true={alarmSet}>
+            <button class="slds-button slds-button_neutral slds-button_stretch btn" disabled={isSelected} onclick={clearHandler}>Clear Alarm</button>
+        </template>
+    </div>
+</template>

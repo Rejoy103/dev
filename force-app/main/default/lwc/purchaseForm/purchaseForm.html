@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Purchase Form">
+        <div class="slds-m-around_medium">
+            <table >
+                <tbody>
+                    <tr class="test"><td><lightning-input type="text" placeholder="Item Name" class="slds-m-around_small"></lightning-input></td>
+                        <td><lightning-input typr="currency" placeholder="Unit Price" class="slds-m-around_small"></lightning-input></td>
+                        <td><lightning-input type="number" placeholder="Quantity" class="slds-m-around_small"></lightning-input></td>
+                    </tr>
+                </tbody>
+            </table>
+            <lightning-button label="New Item" variant="brand" onclick={newItem}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Bill">
+        <div class="slds-m-around_medium">
+            <p><strong>Bill Reference : {name}</strong></p>
+            <p>test</p>
+            <template if:true={relatedrecords}>
+                <table>
+                    <template for:each={relatedrecords} for:item="rec">
+                        <tr key={rec.fields.Item_No__c.value}>
+                            <td>{rec.fields.Name__c.value}</td>
+                            <td>{rec.fields.Quantity__c.value}</td>
+                            <td>{rec.fields.Total_Price__c.value}</td>
+                        </tr>
+                    </template>
+                </table>
+            </template>
+        </div>
+    </lightning-card>
+</template>
