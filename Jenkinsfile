@@ -9,7 +9,6 @@ node{
     def PACKAGE_VERSION
     def SF_INSTANCE_URL = env.SF_INSTANCE_URL ?: "https://login.salesforce.com"
 
-    def toolbelt = tool 'toolbelt'
 
         stage('checkout source') {
             // when running in multi-branch job, one must issue this command
@@ -23,7 +22,7 @@ node{
             // -------------------------------------------------------------------------
 
                 stage('Authorize Dev Org') {
-                    rc = command "${toolbelt}/sf org login jwt --instance-url ${SF_INSTANCE_URL} --client-id ${SF_CONSUMER_KEY} --username ${SF_USERNAME} --jwt-key-file ${server_key_file} --set-default-dev-hub --alias DevOrg"
+                    rc = command "sf org login jwt --instance-url ${SF_INSTANCE_URL} --client-id ${SF_CONSUMER_KEY} --username ${SF_USERNAME} --jwt-key-file ${server_key_file} --set-default-dev-hub --alias DevOrg"
                     if (rc != 0) {
                         error 'Salesforce dev hub org authorization failed.'
                     }else{
