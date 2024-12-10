@@ -9,6 +9,8 @@ node{
     def PACKAGE_VERSION
     def SF_INSTANCE_URL = env.SF_INSTANCE_URL ?: "https://login.salesforce.com"
 
+    def toolbelt = tool 'toolbelt'
+
 
         stage('checkout source') {
             // when running in multi-branch job, one must issue this command
